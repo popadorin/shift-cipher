@@ -1,6 +1,10 @@
 package com.dorin;
 
+import org.apache.log4j.Logger;
+
 public class Decrypter {
+    private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
+
     private Letters letters = Letters.getInstance();
     private StringHelper helper = new StringHelper();
 
@@ -8,10 +12,10 @@ public class Decrypter {
         String text = incomeText.toLowerCase();
         String mostFrequentLetterInEnglish = "e";
         String mostFrequentLetter = helper.getMostFrequentLetter(text);
-        System.out.println("Most freq letter in text: " + mostFrequentLetter);
+        LOGGER.info("Most freq letter in text: " + mostFrequentLetter);
 
         int shift = letters.getShift(mostFrequentLetterInEnglish, mostFrequentLetter);
-        System.out.println("shift = " + shift);
+        LOGGER.info("shift = " + shift);
         if (shift == 0) {
             return text;
         }

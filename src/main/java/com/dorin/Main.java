@@ -1,6 +1,9 @@
 package com.dorin;
 
+import org.apache.log4j.Logger;
+
 public class Main {
+    private static final Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
         Decrypter decrypter = new Decrypter();
@@ -11,7 +14,7 @@ public class Main {
         String message1 = "WKHSWEC: WI XKWO SC WKHSWEC NOMSWEC WOBSNSEC," +
                 " MYWWKXNOB YP DRO KBWSOC YP DRO XYBDR, QOXOBKV YP DRO POVSH VOQSYXC," +
                 " VYIKV COBFKXD DY DRO DBEO OWZOBYB, WKBMEC KEBOVSEC. PKDROB DY K WEBNOBON CYX," +
-                " RECLKXN DY K WEBNOBON GSPO. KXN S GSVV RKFO WI FOXQOKXMO, SX DRSC VSPO YB DRO XOHD";
+                " RECLKXN DY K WEBNOBON GSPO. KXN S GSVV RKFO WI FOXQOKXMO, SX DRSC VSPO YB DRO XOHD.";
 
         String message2 = "XOXKR IETG BL MH UX VHGLBWXKXW," +
                 " XOXKR XQIXWBXGM MKBXW TGW XOXKR FXMAHW MTDXG UXYHKX FTMMXKL TKX UKHNZAM MH MABL ETLM XQMKXFBMR." +
@@ -31,10 +34,10 @@ public class Main {
         String decryptedMessage3 = decrypter.decrypt(message3);
 
 
-        System.out.println("Deadline message: " + decryptedDeadlineText);
-        System.out.println("Message1: " + decryptedMessage1);
-        System.out.println("Message2: " + decryptedMessage2);
-        System.out.println("Message3: " + decryptedMessage3);
+        LOGGER.info("Deadline message: " + decryptedDeadlineText);
+        LOGGER.info("Message1: " + decryptedMessage1);
+        LOGGER.info("Message2: " + decryptedMessage2);
+        LOGGER.info("Message3: " + decryptedMessage3);
     }
 
 }
