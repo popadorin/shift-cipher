@@ -164,8 +164,15 @@ The letters are hold in an array of Strings and after the modification of the le
 Fig. 6 - Starting point of the application
 
 It is important to choose the language in order to have the expected result after the decrypting of the message.
+See the results(Fig. 7) after compiling and running this code - bellow.
 
-## Conclusion
+### Results
+
+![RESULTS](https://raw.githubusercontent.com/popadorin/shift-cipher/write-report-md/img/result_si.png)
+
+Fig. 7 - Results after running the code
+
+### Conclusion
 
 Message based communication has been used from the age of Caesar as nowadays.
 Having an encryption mechanism is pretty crucial when we are speaking about secure level of our messages and good thing to know is that a shifting of the letters index algorithm is not so secure, it is more interesting for testing, because such an algorithm is easy to determine even though we don't know the language. 
