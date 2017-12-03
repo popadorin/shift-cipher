@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Decrypter decrypter = new Decrypter();
 
+        Language language = Language.EN;
+
 	    String deadlineText = "AB ZNRL MAX WXTWEBGX YHK MABL ETUHKTMHKR BL" +
                 " MAX MPXGMBXMA HY WXVXFUXK B PHNEW EBDX MH PBLA RHN ZHHW ENVD PBMA BM TGW ATOX T GBVX EBYX.";
 
@@ -28,10 +30,10 @@ public class Main {
                 " HJSYWFQ MJFYNSL, HTSHWJYJ, YMJ HFQJSIFW, FSI KQZXMNSL YTNQJYX FSI XJBJWX.";
 
 
-        String decryptedDeadlineText = decrypter.decrypt(deadlineText);
-        String decryptedMessage1 = decrypter.decrypt(message1);
-        String decryptedMessage2 = decrypter.decrypt(message2);
-        String decryptedMessage3 = decrypter.decrypt(message3);
+        String decryptedDeadlineText = decrypter.decrypt(deadlineText, language);
+        String decryptedMessage1 = decrypter.decrypt(message1, language);
+        String decryptedMessage2 = decrypter.decrypt(message2, language);
+        String decryptedMessage3 = decrypter.decrypt(message3, language);
 
 
         LOGGER.info("Deadline message: " + decryptedDeadlineText);

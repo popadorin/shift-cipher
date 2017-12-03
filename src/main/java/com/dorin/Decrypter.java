@@ -8,14 +8,14 @@ public class Decrypter {
     private Letters letters = Letters.getInstance();
     private StringHelper helper = new StringHelper();
 
-    public String decrypt(String incomeText) {
+    public String decrypt(String incomeText, Language language) {
         String text = incomeText.toLowerCase();
-        String mostFrequentLetterInEnglish = "e";
+        String languageMostFrequentLetter = getLanguageMostFrequentLetter(language);
         String mostFrequentLetter = helper.getMostFrequentLetter(text);
-        LOGGER.info("Most freq letter in text: " + mostFrequentLetter);
+        LOGGER.info("Most frequent letter in text: " + mostFrequentLetter);
 
-        int shift = letters.getShift(mostFrequentLetterInEnglish, mostFrequentLetter);
-        LOGGER.info("shift = " + shift);
+        int shift = letters.getShift(languageMostFrequentLetter, mostFrequentLetter);
+        LOGGER.info("Letters are shifted with: " + shift + " positions");
         if (shift == 0) {
             return text;
         }
@@ -31,5 +31,25 @@ public class Decrypter {
         }
 
         return String.join("", letters);
+    }
+
+    private String getLanguageMostFrequentLetter(Language language) {
+        switch (language) {
+            case EN:
+                return "e";
+            case ROM:
+                return "e";
+            case TURK:
+                return "a";
+            case FR:
+                return "e";
+            case DE:
+                return "e";
+            case ISLAND:
+                return "a";
+            default:
+                LOGGER.error("No such language");
+                return "a";
+        }
     }
 }
